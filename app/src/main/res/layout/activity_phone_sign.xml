@@ -10,37 +10,47 @@
         android:id="@+id/phone_txtvw_phone_act"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="77dp"
         android:ems="10"
-        android:inputType="textPersonName"
 
-        tools:layout_editor_absoluteX="95dp"
-        tools:layout_editor_absoluteY="77dp"
-        android:hint="@string/enter_phone_number" />
+        android:hint="@string/enter_phone_number"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btn_sendSMS_phone_act"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
         android:text="Send SMS"
-        tools:layout_editor_absoluteX="149dp"
-        tools:layout_editor_absoluteY="172dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/phone_txtvw_phone_act" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/smsEdittxt_phone_act"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-
         android:inputType="textPersonName"
-        android:text="@string/enter_sent_code"
-        tools:layout_editor_absoluteX="92dp"
-        tools:layout_editor_absoluteY="286dp" />
+        android:minHeight="48dp"
+        android:hint="@string/enter_sent_code"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btn_sign_phone_act"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/enter_sent_code"
-        tools:layout_editor_absoluteX="149dp"
-        tools:layout_editor_absoluteY="393dp" />
+        android:layout_marginTop="63dp"
+        android:text="@string/sign_in"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/smsEdittxt_phone_act" />
 </androidx.constraintlayout.widget.ConstraintLayout>
