@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">FireBaseExample2</string>
+    <string name="enter_phone_number">enter your phone</string>
+    <string name="enter_sent_code">enter sent code</string>
 </resources>

@@ -38,7 +38,7 @@ public class SignUp extends AppCompatActivity {
         enter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                    String userEmail = mail.getText().toString();
+                    String userEmail = mail.getText().toString().trim();
                     String userPassword = password.getText().toString();
 
                     signUpFirebase(userEmail, userPassword);
@@ -49,7 +49,8 @@ public class SignUp extends AppCompatActivity {
 
     public void signUpFirebase(String userEmail, String userPassword){
 
-                mAuth.signInWithEmailAndPassword(userEmail, userPassword)
+//                mAuth.signInWithEmailAndPassword(userEmail, userPassword)
+                mAuth.createUserWithEmailAndPassword(userEmail, userPassword)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
