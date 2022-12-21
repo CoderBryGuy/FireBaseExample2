@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -63,7 +64,7 @@ public class MainMenu extends AppCompatActivity {
         uploadBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                    uploadPhoto();
             }
         });
 
@@ -107,18 +108,23 @@ public class MainMenu extends AppCompatActivity {
                     @Override
                     public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                         progressBar.setVisibility(View.INVISIBLE);
+                        Toast.makeText(MainMenu.this, "Upload successful", Toast.LENGTH_SHORT).show();
+
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-
+                        Toast.makeText(MainMenu.this, "Sorry, there is a problem"
+                                , Toast.LENGTH_SHORT)
+                                .show();
                     }
                 })
                 .addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
                     @Override
                     public void onProgress(@NonNull UploadTask.TaskSnapshot snapshot) {
-
+                            double progress = (100 * snapshot.getBytesTransferred() / snapshot.getTotalByteCount());
+                            progressBar.setProgress((int)progress);
                     }
                 });
 
